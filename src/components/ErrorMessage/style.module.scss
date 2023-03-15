@@ -1,0 +1,63 @@
+// colors
+$red: #f55e5e;
+$whiteish: #fbfbfb;
+
+.error {
+  width: 300px;
+  margin: 100px auto;
+  padding: 40px;
+  display: inline-block;
+  vertical-align: top;
+  
+  box-shadow: 0 0 10px 1px #c8c8c8;
+  border-radius: 20px;
+  color: $whiteish;
+  
+  h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.btn ,
+.error {
+  background-color: $red;
+  
+  h3 {
+    color: darken($red, 30);
+    text-shadow: 0 0 1px lighten($red, 20);
+  }
+
+}
+
+.btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px 10px;
+  cursor: pointer;
+  
+  border: 4px solid $whiteish;
+  border-radius: 80px;
+  
+  color: $whiteish;
+  font-size: .9em;
+  font-weight: bold;
+  line-height: 1em;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: $whiteish;
+}
+
+.btn:hover  {
+  color: $red;
+}
+
+
+.link {
+  text-decoration: none;
+  color: #000;
+}
