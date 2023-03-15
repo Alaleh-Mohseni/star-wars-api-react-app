@@ -17,6 +17,7 @@ const CharacterCard = ({ results }) => {
                     className={`col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark`}
                 >
                     <div className={`${styles.card} d-flex flex-column justify-content-center`} >
+                        <img className={`${styles.img} img-fluid`} src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt="" />
                         <div className={`${styles.content}`}>
                             <Link className={`${styles.link}`} to={`/characters/${id}`} key={id} >
                                 <div className="fs-5 fw-bold mb-4 text-center">{name}</div>
@@ -37,7 +38,7 @@ const CharacterCard = ({ results }) => {
             )
         });
     }
-    
+
 
 
     return <div className="row">{display}</div>;
