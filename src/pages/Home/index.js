@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import CharacterCard from "../../components/CharacterCard";
+import CharacterCards from "../../components/CharacterCards";
 import Pagination from "../../components/Pagination";
 import Navbar from "../../components/Navbar";
 import { enhancedFetch } from "../../services/Http";
@@ -11,19 +11,19 @@ const BASE_API_URL = `https://swapi.dev/api`;
 
 
 const Home = () => {
+
     const [people, setPeople] = useState([])
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
-    const { results } = people;
 
 
     useEffect(() => {
         const fetchPeople = async () => {
             try {
-                const response = await enhancedFetch('GET', BASE_API_URL + `/people/?page=${page}`)
-                setPeople(response)
                 setLoading(true)
+                const response = await enhancedFetch('GET', BASE_API_URL + `/people/?page=${page}`)
+                setPeople(response.results)
             } catch (error) {
                 setError(true)
             } finally {
@@ -32,7 +32,38 @@ const Home = () => {
         }
 
         fetchPeople()
+
     }, [page])
+
+
+
+    const renderCharacter = () => {
+
+        if (loading) {
+            return <Loading />
+        }
+
+        if (error) {
+            return <ErrorMessage />
+        }
+
+        return (
+            people.map(people => {
+                let id = people.url.split("/").at(-2)
+                return (
+                    <CharacterCards
+                        key={id}
+                        id={id}
+                        name={people.name}
+                        gender={people.gender}
+                        birth={people.birth_year}
+                    />
+                );
+            })
+        )
+
+    }
+
 
 
     return (
@@ -43,9 +74,7 @@ const Home = () => {
                 <div className={`row justify-content-center`}>
                     <div className="col-lg-8 col-12">
                         <div className="row">
-                            {loading && <Loading /> }
-                            {error && <ErrorMessage /> }
-                            <CharacterCard results={results} />
+                            {renderCharacter()}
                         </div>
                     </div>
                 </div>

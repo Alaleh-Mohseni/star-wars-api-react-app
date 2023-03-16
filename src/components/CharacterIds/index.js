@@ -1,6 +1,6 @@
 import styles from "./style.module.scss";
 
-const CharacterId = ({ name, hair, skin, mass, height, eye }) => {
+const CharacterIds = ({ name, hair, skin, mass, height, eye }) => {
 
     return (
         <div className={`${styles.card} d-flex flex-column gap-3 mx-3`}>
@@ -32,4 +32,4 @@ const CharacterId = ({ name, hair, skin, mass, height, eye }) => {
     )
 }
 
-export default CharacterId
+export default CharacterIds

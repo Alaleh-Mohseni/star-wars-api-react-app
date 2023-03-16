@@ -1,9 +1,9 @@
 import styles from "./style.module.scss";
 
-const Planets = ({ population, climate, diameter, gravity, terrain, created }) => {
+const Planets = ({ population, climate, diameter, gravity, terrain, created, name }) => {
     return (
         <div className={`${styles.card} d-flex flex-column gap-3 mx-3 mt-4`}>
-            <h1 className="text-center pt-3">Planet</h1>
+            <h1 className="text-center pt-3">Planet's Name: {name}</h1>
             <div className='content mx-4'>
                 <div className="mt-1">
                     <span className="fw-bold">Population: </span>
