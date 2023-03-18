@@ -22,3 +22,7 @@ The app basically:
 
 - "/": Home page (Characters);
 - "/characters/:id": Specific character's page;
+
+## Demo
+
+[Star Wars](https://Alaleh-Mohseni.github.io/star-wars-api-react-app/#/)!
