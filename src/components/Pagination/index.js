@@ -27,7 +27,7 @@ const Pagination = ({ pageNumber, updatePageNumber }) => {
 
     return (
         <nav aria-label="..." className="d-flex flex-column align-items-center justify-content-center m-2">
-            <h4 className="py-2">Page: {pageNumber}</h4>
+            {/* <h4 className="py-2">Page: {pageNumber}</h4> */}
             <ul className="pagination">
                 <li className="page-item disabled">
                     <button onClick={() => changePage("previous")} className="btn btn-danger" disabled={pageNumber === 1} type="button">

@@ -17,7 +17,8 @@ const Characters = () => {
   const [planets, setPlanets] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
-  const { characterId } = useParams()
+  const { id } = useParams()
+
 
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const Characters = () => {
     const fetchCharacter = async () => {
       try {
         setLoading(true)
-        const response = await enhancedFetch('GET', BASE_API_URL + `/people/${characterId}`)
+        const response = await enhancedFetch('GET', BASE_API_URL + `/people/${id}`)
         setPeople(response)
       } catch {
         setError(true)
@@ -38,7 +39,7 @@ const Characters = () => {
     const fetchPlanet = async () => {
       try {
         setLoading(true)
-        const response = await enhancedFetch('GET', BASE_API_URL + `/planets/${characterId}`)
+        const response = await enhancedFetch('GET', BASE_API_URL + `/planets/${id}`)
         setPlanets(response)
       } catch {
         setError(true)
@@ -51,10 +52,8 @@ const Characters = () => {
     fetchCharacter()
     fetchPlanet()
 
-  }, [characterId])
+  }, [id])
 
-  console.log('people', people)
-  console.log('planets', planets)
 
 
   const renderDetails = () => {
@@ -70,7 +69,6 @@ const Characters = () => {
 
     return (
       <div className="col-lg-6 col-md-6 my-5">
-        {/* <img className={`img-fluid`} src={`https://starwars-visualguide.com/assets/img/characters/${characterId}.jpg`} alt="" /> */}
         < CharacterIds
           name={people.name}
           hair={people.hair_color}
@@ -88,7 +86,6 @@ const Characters = () => {
           gravity={planets.gravity}
           terrain={planets.terrain}
         />
-        {/* <img className={`img-fluid`} src={`https://starwars-visualguide.com/assets/img/planets/${characterId}.jpg`} alt="" /> */}
       </div>
     )
   }

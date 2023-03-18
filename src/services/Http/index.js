@@ -1,6 +1,8 @@
-export const enhancedFetch = ( method ,url, data ) => {
+export const enhancedFetch = (method, url) => {
   return fetch(url)
-  .then(response => {
-    return response.json()
-  })
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      }
+    })
 }

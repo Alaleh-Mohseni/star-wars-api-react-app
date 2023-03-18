@@ -24,7 +24,7 @@ const Home = () => {
                 setLoading(true)
                 const response = await enhancedFetch('GET', BASE_API_URL + `/people/?page=${page}`)
                 setPeople(response.results)
-            } catch (error) {
+            } catch {
                 setError(true)
             } finally {
                 setLoading(false)
@@ -69,10 +69,10 @@ const Home = () => {
     return (
         <div className="Home">
             <Navbar />
-            <h1 className="text-center mb-3">Characters</h1>
+            <h1 className="text-center my-4">Characters</h1>
             <div className="container">
                 <div className={`row justify-content-center`}>
-                    <div className="col-lg-8 col-12">
+                    <div className="col-lg-12 col-12">
                         <div className="row">
                             {renderCharacter()}
                         </div>
