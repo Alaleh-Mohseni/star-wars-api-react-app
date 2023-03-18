@@ -25,4 +25,4 @@ The app basically:
 
 ## Demo
 
-[Star Wars](https://Alaleh-Mohseni.github.io/star-wars-api-react-app/#/)!
+[Star Wars](https://Alaleh-Mohseni.github.io/star-wars-api-react-app/#/)
