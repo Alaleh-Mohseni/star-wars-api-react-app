@@ -14,7 +14,7 @@
 - React
 - React Router
 - Bootstrap
-- SCSS
+- CSS
 
 ## Pages
 
