@@ -1,4 +1,4 @@
-import styles from "./style.module.scss";
+import "./style.css";
 
 const ErrorMessage = () => {
     
@@ -7,10 +7,10 @@ const ErrorMessage = () => {
 	}
 
     return (
-        <div className={`${styles.error}`}>
+        <div className="error">
             <h3>Ooops!</h3>
             <p>Something went wrong, sorry about that.</p>
-            <button className={`${styles.btn}`} onClick={clickHandler}>Let's try again</button>
+            <button className="error-btn" onClick={clickHandler}>Let's try again</button>
         </div>
     )
 }

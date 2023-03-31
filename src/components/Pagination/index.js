@@ -1,3 +1,5 @@
+import "./style.css"
+
 const Pagination = ({ pageNumber, updatePageNumber }) => {
 
     const changePage = (type, number) => {
@@ -18,7 +20,11 @@ const Pagination = ({ pageNumber, updatePageNumber }) => {
     const counted = [];
     for (let i = 1; i <= pages; i++) {
         counted.push(
-            <button onClick={() => changePage("number", i)} className={`btn btn-warning ms-1`} type="button" key={i}>
+            <button
+                onClick={() => changePage("number", i)}
+                className="paginate-btn btn btn-warning ms-1"
+                key={i}
+            >
                 {i}
             </button>
         );
@@ -27,16 +33,23 @@ const Pagination = ({ pageNumber, updatePageNumber }) => {
 
     return (
         <nav aria-label="..." className="d-flex flex-column align-items-center justify-content-center m-2">
-            {/* <h4 className="py-2">Page: {pageNumber}</h4> */}
             <ul className="pagination">
-                <li className="page-item disabled">
-                    <button onClick={() => changePage("previous")} className="btn btn-danger" disabled={pageNumber === 1} type="button">
+                <li className="page-items">
+                    <button
+                        onClick={() => changePage("previous")}
+                        className="btn btn-danger"
+                        disabled={pageNumber === 1}
+                    >
                         Previous
                     </button>
                 </li>
                 <li className="page-item">{counted}</li>
                 <li className="page-item">
-                    <button onClick={() => changePage("next")} className="btn btn-danger ms-1" disabled={pageNumber === 9} type="button">
+                    <button
+                        onClick={() => changePage("next")}
+                        className="btn btn-danger ms-1"
+                        disabled={pageNumber === 9}
+                    >
                         Next
                     </button>
                 </li>

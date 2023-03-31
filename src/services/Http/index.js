@@ -1,8 +1,11 @@
-export const enhancedFetch = (method, url) => {
-  return fetch(url)
-    .then(response => {
-      if (response.ok) {
-        return response.json()
-      }
-    })
+import axios from "axios";
+
+export const enhancedFetch = async (url) => {
+  try {
+    const response = await axios.get(url)
+    const result = await response.data
+    return result
+  } catch (error) {
+    console.log('Error');
+  }
 }

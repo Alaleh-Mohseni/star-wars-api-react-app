@@ -1,33 +1,33 @@
 import { Link } from "react-router-dom";
-import styles from "./style.module.scss";
+import "./style.css";
 
 
-const CharacterCards = ({ id, name, gender, birth }) => {
-    
+
+const CharacterCards = ({ id, name, handleFavouritesClick }) => {
+
     return (
-        <div
-            key={id}
-            className={`col-lg-3 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark`}
-        >
-            <Link className={`${styles.link}`} to={`/characters/${id}`} key={id} >
-                <div className={`${styles.card} d-flex flex-column justify-content-center`} >
-                    <img className={`${styles.img} img-fluid`} src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt="" />
-                    <div className={`${styles.content}`}>
-                        <div className="fs-5 fw-bold mb-4 text-center">{name}</div>
-                        <div className="">
-                            <div className="fw-normal">
-                                <span className="fw-semibold fs-5 pe-1">Gender:</span>
-                                <span className="fs-6">{gender}</span>
-                            </div>
-                            <div className="fw-normal">
-                                <span className="fw-semibold fs-5 pe-1">Year of Birth:</span>
-                                <span className="fs-6">{birth}</span>
-                            </div>
-                        </div>
+        <div key={id} className="col-lg-3 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark">
+            <div className="character-card d-flex flex-column justify-content-center align-item-center shadow" >
+                <button className="character-card__btn" onClick={() => handleFavouritesClick(id)}>
+                    <i className="fa fa-heart-o"></i>
+                    {/* {favorites ?
+                        <i className="fa fa-heart-o"></i>
+                        :
+                        <i className="fa fa-heart"></i>
+                    } */}
+                </button>
+                <img
+                    className="character-card__img img-fluid"
+                    src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
+                    alt="Star Wars Character"
+                />
+                <Link className="character-card__link" to={`/characters/${id}`} key={id} >
+                    <div className="character-card__content">
+                        <h1 className="fs-5 fw-bolder my-3 text-center">{name}</h1>
                     </div>
-                </div>
-            </Link>
-        </div>
+                </Link>
+            </div>
+        </div >
     )
 
 }
