@@ -25,4 +25,4 @@ The app basically:
 - "/notfound
 
 ## Demo
-[Star Wars](https://raw.githack.com/Alaleh-Mohseni/star-wars-api-react-app/blob/main/public/index.html)
+[Star Wars](https://raw.githack.com/Alaleh-Mohseni/star-wars-api-react-app/public/index.html)
