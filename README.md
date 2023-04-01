@@ -22,7 +22,3 @@ The app basically:
 
 - "/": Home page (Characters);
 - "/characters/:id": Specific character's page;
-- "/notfound
-
-## Demo
-[Star Wars](https://github.com/Alaleh-Mohseni/star-wars-api-react-app/blob/main/public/index.html)
